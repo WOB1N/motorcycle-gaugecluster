@@ -14,7 +14,7 @@ Still waiting for the bloody display to arrive. I'm already fantasizing about wh
 I'm wondering... I will connect the display via SPI, which saves pins but is probably a fair bit slower than the alternative 8-bit parallel interface. So, reducing the number of commands sent to the display may be a way to compensate for this. I suspect that drawXBMP(..) will simply loop through all pixels in the image and draw them separately. But decomposing these simple images into rectangles and lines would result in less commands. Which might be a lot faster. On second thought, the refesh-rate/speed matters primarily on the stats that change often, like speed and rpm. Hmm.. food for thought.
 
 ### 16-11-2017: 
-I found a neat little switched power supply from Traco, which accepts voltages up to 40v and outputs a very steady 4.99v. Will add in part numbers later.
+I bought a neat little switched power supply from Traco, which accepts voltages up to 40v and outputs a very steady 4.99v. Will add in part numbers later.
 
 ### 15-11-2017: 
 Soldered a ATMega328P to my proto-board. Hooked up I2C as well as some other signal wires. Decided that I trust these signals a little bit more than the dreaded spark plug signal, so I won't be using opto-couplers to shield the I/O pins on these lines. Insead went with 47k/100k voltage-dividers to turn down the voltage from 12-15v to a more acceptable 4-5v.
@@ -26,7 +26,7 @@ Pondered about all functions that these gauges must have. Turn indicators, neutr
 Decided that waiting for my OLED-display is boring, so I've hooked up an I2C-connection from the ATTiny85 to another UNO. Made the painful mistake of miswiring the required pullup resistors as pulldown-resistors. Sadly it took a while before I found the culprit, but I2C is now operational. Used the TinyWire library to make the ATTiny a slave device with address #3. Three, because, reasons.
 
 ### 10-11-2017: 
-Decided that using two LEDs as a debugger is stupid. Also, my girlfriend thinks I'm crazy for staring into flickering LEDs for hours. So I've ordered a monochrome graphical OLED-display with 256x64 pixels. These badboys are readable in direct/bright sunlight, not too expensive, can do 4-bit grayscale, and it should be fairly easy for an Arduino to drive it's SSD1322 chip over SPI using u8glib. 
+Decided that using two LEDs as a debugger is stupid. Also, my girlfriend thinks I'm crazy for staring into flickering LEDs for hours. So I've ordered a monochrome graphical OLED-display with 256x64 pixels. These badboys are readable in direct/bright sunlight, not too expensive, can do 4-bit grayscale, and it should be fairly easy for an Arduino to drive the SSD1322 chip over SPI using u8glib.
 
 A company called NewHaven produces the displays. But ofcourse I bought a chinese knockoff. This might bite me later. 
 
