@@ -11,7 +11,7 @@ Still waiting for the bloody display to arrive. I'm already fantasizing about wh
 
 ![icon set](https://github.com/RobinWagenaar/motorcycle-gaugecluster/blob/master/software/graphics/iconset.png "icon set")
 
-I'm wondering... I will connect the display via SPI, which saves pins but is probably a fair bit slower than the alternative 8-bit parallel interface. So, reducing the number of commands sent to the display may be a way to compensate for this. I suspect that drawXBMP(..) will simply loop through all pixels in the image and draw them separately. But decomposing these simple images into rectangles and lines would result in less commands. Which might be a lot faster. On second thought, the refesh-rate/speed matters primarily on the stats that change often, like speed and rpm. Hmm.. food for thought.
+I'm wondering... I will connect the display via SPI, which saves I/O-pins compared to the 8-bit parallel interface but is probably also a fair bit slower. Therefore, reducing the number of commands sent to the display may be a way to compensate for this. Since I suspect that drawXBMP(..) will simply loop through all pixels in the image and draw them separately. But decomposing these simple images into rectangles and lines would result in less commands. Which might be a lot faster. On second thought, the refesh-rate/speed matters primarily on the stats that change often, like speed and rpm. Hmm.. food for thought.
 
 ### 16-11-2017: 
 I bought a neat little switched power supply from Traco, which accepts voltages up to 40v and outputs a very steady 4.99v. Will add in part numbers later.
