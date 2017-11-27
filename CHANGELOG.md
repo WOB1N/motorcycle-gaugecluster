@@ -1,5 +1,12 @@
 ## Current status / changelog
 
+### 25-11-2017:
+Since my barebone ATMega328p does not support console output, I bought a cheap SPI TFT-display merely for testing. Tested the protoboard with the display; it worked fine, pretty neat. Then I tested the whole setup standalone on the motorcycle. Got some not-so-great results. Tacho was working. Speedo was not. According to [this video](https://www.youtube.com/watch?v=H7d9fukFccY) the sensor should output 5v when the magnet passes. But thats a 2002+ second generation SV650. Turns out that my older style "sensor" connects signal to ground when the magnet passes. So I re-soldered that part of the proto-board and updated the Fritzing file accordingly. At this point, the display just displays two numbers. No graphics of any kind. But it's working.
+
+What I realized while watching the numbers in front of me, is that counting sensor-pulses in the last 500ms is not a very accurate measurement at all. Since the rpm-signal will trigger once at every revolution, it will -at idle- count about 1500rpm/60sec=25 pulses per second. Or 12.5 pulses per 500ms. This seemed reasonable at first, until I realized that it also means that every single pulse per 500ms accounts for 120rpm. I'm not sure if I like these 120rpm increments. A more precise measurement for low rpm might be to count the nanoseconds between pulses. At 1500rpm, there would be about 400ns beween pulses. However, at 10500rpm this interval would be reduced to about 50ns. Considering that the internal clock may be 4ns off at any time.. this would lead to a 4/50x100=8% inaccuracy at maximum engine speed. Hmmph. 
+
+I'll keep it simple for now, until there is a clear reason why 120rpm increments suck.
+
 ### 21-11-2017: 
 Sent the model to the 3D-hub. Also, still waiting for the display to arrive. 
 
