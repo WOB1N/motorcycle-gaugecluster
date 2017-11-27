@@ -7,6 +7,8 @@ What I realized while watching the numbers in front of me, is that counting sens
 
 I'll keep it simple for now, until there is a clear reason why 120rpm increments suck.
 
+![progress pic](https://i.imgur.com/EkjDqEU.jpg "progress so far")
+
 ### 21-11-2017: 
 Sent the model to the 3D-hub. Also, still waiting for the display to arrive. 
 
